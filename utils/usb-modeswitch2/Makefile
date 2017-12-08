@@ -12,9 +12,12 @@ PKG_VERSION:=2.5.1
 PKG_RELEASE:=1
 
 # # http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-2.5.1.tar.bz2
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+# PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE:=usb-modeswitch-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=http://www.draisberghof.de/usb_modeswitch
 PKG_MD5SUM:=7e6435a2afe7aed8574fe59cf09a3503
+PKG_BUILD_DIR:=usb-modeswitch-$(PKG_VERSION)
+PKG_DEPENDS:=+libusb-1.0
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -33,7 +36,7 @@ endef
 
 define Build/Compile
 	$(TARGET_CC) $(TARGET_CFLAGS) $(TARGET_CPPFLAGS) $(TARGET_LDFLAGS) \
-		-lusb \
+		-lusb-1.0 \
 		-o $(PKG_BUILD_DIR)/usb_modeswitch-OpenWrt \
 				$(PKG_BUILD_DIR)/usb_modeswitch.c
 endef

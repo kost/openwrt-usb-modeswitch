@@ -12,9 +12,11 @@ PKG_VERSION:=20170806
 PKG_RELEASE:=1
 
 # http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-data-20170806.tar.bz2
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+# PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE:=usb-modeswitch-data-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=http://www.draisberghof.de/usb_modeswitch/
 PKG_MD5SUM:=fb50d15b52e909d742dd16f0a9882316
+PKG_BUILD_DIR:=usb-modeswitch-data-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 
