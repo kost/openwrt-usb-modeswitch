@@ -21,7 +21,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/usb-modeswitch-data2
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=usb-modeswitch
+  DEPENDS:=usb-modeswitch2
   TITLE:=USB ModeSwitch - Dongle configuration database
   URL:=http://packages.debian.org/de/sid/usb-modeswitch-data
 endef
